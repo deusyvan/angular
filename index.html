@@ -3,8 +3,7 @@
         <script type="text/javascript" src="angular.min.js"></script>
     </head>
     <body ng-app ="meuApp" ng-controller="meuCtrl">
-        <button ng-click="contador = contador + 1">+1</button>
-        <button ng-click="contador = contador + 2">+2</button>
+        <button ng-click="adicionar()">+1</button>
         
         <p>{{contador}}</p>
         
@@ -13,7 +12,9 @@
         app.controller('meuCtrl', function($scope){
         	
         	$scope.contador = 0;
-        	
+        	$scope.adicionar = function(){
+        		$scope.contador = $scope.contador +1;
+        	}
         });
         //Eventos: clique, teclado, soltar, copiar, colar, etc
         </script>
