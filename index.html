@@ -4,28 +4,23 @@
     </head>
     <body ng-app ="meuApp" ng-controller="meuCtrl">
         <h2>Lista de nomes</h2>
-        <div>{{html}}</div>
+        <ul>
+            <li ng-repeat="x in nomes">{{x.nome}} tem {{x.idade}} anos</li>
+        </ul>
         
         <script type="text/javascript">
         var app = angular.module('meuApp', []);
         app.controller('meuCtrl', function($scope, $http){
+        	//Inicia zerado
+        	$scope.nomes = [];
         	
-        	$scope.html = 'nada';
-        	
-        	$http.get('pagina1.html').then(function(response){
-        		$scope.html = response.data;
+        	//Pegar as informações do webservice
+        	$http.get('http://phpdozeroaoprofissional.com.br/testeangularjs.php').then(function(response){
+        		$scope.nomes = response.data.resultado;
         	});
         	
         });
-        /*
-         *$http = biblioteca http do angular
-         *get = requisição via get
-         *('url da pagina')
-         *.then() = fazer algo com isso
-         *function(response) = pega o response do get da página
-         *$scope.html = variável
-         *response.data = pega os dados que vieram de response e carrega a variavel
-         */
+        // http://phpdozeroaoprofissional.com.br/testeangularjs.php retorna um json
         </script>
     </body>
 </html>
