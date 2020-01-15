@@ -8,8 +8,7 @@
             <input type="email" name="email" ng-model="meuEmail" required/>
             <input type="submit" value="Enviar"/>
             
-            <p>O e-mail eh valido?</p>
-            <p>{{ meuForm.email.$valid}}</p>
+            <p ng-show="meuForm.email.$invalid">Este e-mail nao eh valido! Corrija!</p>
         </form>
         
         <script type="text/javascript">
