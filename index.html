@@ -6,11 +6,9 @@
         
         <form name="meuForm">
             <input type="email" name="email" ng-model="meuEmail" required/>
+            <span ng-show="meuForm.email.$dirty && meuForm.email.$invalid">(!)</span>
+            <br/><br/>
             <input type="submit" value="Enviar"/>
-            
-            <p ng-show="meuForm.email.$dirty && meuForm.email.$invalid">
-                Este e-mail nao eh valido! Corrija!
-            </p>
         </form>
         
         <script type="text/javascript">
@@ -20,7 +18,8 @@
             
         	
         });
-        //Eventos: clique, teclado, soltar, copiar, colar, focus, etc
+        
+        //w3schools.com/angular/angular_validation.asp
         </script>
     </body>
 </html>
