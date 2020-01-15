@@ -10,7 +10,7 @@
                 <th align="left">Nome</th>
                 <th align="left">País</th>
             </tr>
-            <tr ng-repeat="x in nomes | orderBy:'pais'">
+            <tr ng-repeat="x in nomes | orderBy:ordenarPor">
                 <td>{{x.nome}}</td>
                 <td>{{x.pais}}</td>
             </tr>
@@ -20,6 +20,7 @@
         <script type="text/javascript">
         var app = angular.module('meuApp', []);
         app.controller('meuCtrl', function($scope){
+        	$scope.ordenarPor = "nome";
             $scope.nomes = [
             	{nome:'Boniek', pais:'Brasil'},
             	{nome:'Fulano', pais:'Japão'},
