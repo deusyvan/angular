@@ -3,13 +3,15 @@
         <script type="text/javascript" src="angular.min.js"></script>
     </head>
     <body ng-app ="meuApp" ng-controller="meuCtrl">
-        <h2>Restaurante X</h2>
-        <p ng-show="hora > 17">Estamos Abertos agora as {{hora}}h.</p>
+        <button>+1</button>
+        
+        <p>{{contador}}</p>
         
         <script type="text/javascript">
         var app = angular.module('meuApp', []);
         app.controller('meuCtrl', function($scope){
-        	$scope.hora = 14;
+        	
+        	$scope.contador = 0;
         	
         });
         </script>
