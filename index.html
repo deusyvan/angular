@@ -4,15 +4,14 @@
     </head>
     <body ng-app ="meuApp" ng-controller="meuCtrl">
         <h2>Restaurante X</h2>
-        <p ng-show="mostrarFrase">Estamos abertos</p>
+        <p ng-show="hora > 17">Estamos Abertos agora as {{hora}}h.</p>
         
         <script type="text/javascript">
         var app = angular.module('meuApp', []);
         app.controller('meuCtrl', function($scope){
-        	$scope.mostrarFrase = false;
+        	$scope.hora = 14;
         	
         });
-        // http://phpdozeroaoprofissional.com.br/testeangularjs.php retorna um json
         </script>
     </body>
 </html>
