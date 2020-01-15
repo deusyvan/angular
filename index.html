@@ -4,17 +4,31 @@
     </head>
     <body ng-app ="meuApp" ng-controller="meuCtrl">
         <h2>Lista de nomes</h2>
-        <input type="text" ng-model="filtrarPor" />
-        <ul>
-            <li ng-repeat="x in nomes | filter:filtrarPor">
-                {{x}} 
-            </li>
-        </ul>
+        
+        <table border="0" width="500">
+            <tr>
+                <th align="left">Nome</th>
+                <th align="left">País</th>
+            </tr>
+            <tr ng-repeat="x in nomes | orderBy:'nome'">
+                <td>{{x.nome}}</td>
+                <td>{{x.pais}}</td>
+            </tr>
+        </table>
+        
         
         <script type="text/javascript">
         var app = angular.module('meuApp', []);
         app.controller('meuCtrl', function($scope){
-            $scope.nomes = ["Bonieky", "Fulano", "Cicrano", "Beltrano", "Felipe", "Gustavo", "Amanda"];
+            $scope.nomes = [
+            	{nome:'Boniek', pais:'Brasil'},
+            	{nome:'Fulano', pais:'Japão'},
+            	{nome:'Cicrano', pais:'China'},
+            	{nome:'Beltrano', pais:'França'},
+            	{nome:'Augusto', pais:'Estados Unidos'},
+            	{nome:'Felipe', pais:'Candá'},
+            	{nome:'José', pais:'Rússia'}
+            	]
         });
         </script>
     </body>
