@@ -3,10 +3,14 @@
         <script type="text/javascript" src="angularjs/angular.min.js"></script>
     </head>
     <body ng-app ="meuApp">
-        
+        <input type="text" ng-model="meunome"/><br>
+        {{meunome}}
         
         <script type="text/javascript">
         var app = angular.module('meuApp', []);
+        app.controller('meuCtrl', function($scope){
+            
+        });
         </script>
     </body>
 </html>
