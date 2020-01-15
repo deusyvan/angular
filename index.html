@@ -4,8 +4,7 @@
     </head>
     <body ng-app ="meuApp" ng-controller="meuCtrl">
         <h2>Lista de nomes</h2>
-        <select ng-model="ordenarPor">
-            <option ng-repeat="op in opcoes">{{op}}</option>
+        <select ng-model="ordenarPor" ng-options="x for x in opcoes">
         </select>
         <table border="0" width="500">
             <tr>
