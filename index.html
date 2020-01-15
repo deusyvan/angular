@@ -1,6 +1,6 @@
 <html>
     <head>
-        <script type="text/javascript" src="angularjs/angular.min.js"></script>
+        <script type="text/javascript" src="angular.min.js"></script>
     </head>
     <body ng-app ="meuApp" ng-controller="meuCtrl">
         <h2>Lista de nomes</h2>
@@ -11,6 +11,10 @@
         app.controller('meuCtrl', function($scope, $http){
         	
         	$scope.html = 'nada';
+        	
+        	$http.get('pagina1.html').then(function(response){
+        		$scope.html = response.data;
+        	});
         	
         });
         </script>
