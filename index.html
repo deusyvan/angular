@@ -4,34 +4,25 @@
     </head>
     <body ng-app ="meuApp" ng-controller="meuCtrl">
         
-        <button ng-click="acao()">{{texto}}</button>
-
-        <div ng-show="mostrar">
-            <h2>Menu:</h2>
-            <div>Pizza</div>
-            <div>Feijão</div>
-            <div>Arroz</div>
-        </div>
+        <input type="text" ng-focus="focou()" ng-blur="desfocou()"/>
+        
+        <p>{{texto}}</p>
         
         <script type="text/javascript">
         var app = angular.module('meuApp', []);
         app.controller('meuCtrl', function($scope){
         	
-        	$scope.mostrar = false;
-        	$scope.texto = "Mostrar";
-        	
-        	$scope.acao = function(){
-        		if($scope.mostrar == false){
-        			$scope.mostrar = true;
-        			$scope.texto = "Não mostrar";
-        		} else {
-        			$scope.mostrar = false;
-                    $scope.texto = "Mostrar";
-        		}
-        	}
+            $scope.texto = "Nao ta focado!";
+            $scope.focou = function(){
+            	$scope.texto = "Ta focado!";
+            }
+            
+            $scope.desfocou = function(){
+                $scope.texto = "Nao ta focado!";
+            }
         	
         });
-        //Eventos: clique, teclado, soltar, copiar, colar, etc
+        //Eventos: clique, teclado, soltar, copiar, colar, focus, etc
         </script>
     </body>
 </html>
