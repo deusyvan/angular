@@ -3,18 +3,30 @@
         <script type="text/javascript" src="angular.min.js"></script>
     </head>
     <body ng-app ="meuApp" ng-controller="meuCtrl">
-        <button ng-click="adicionar()">+1</button>
         
-        <p>{{contador}}</p>
+        <button ng-click="mostrarDiv()">Mostrar</button>
+        <button ng-click="esconderDiv()">Não Mostrar</button>
+        <div ng-show="mostrar">
+            <h2>Menu:</h2>
+            <div>Pizza</div>
+            <div>Feijão</div>
+            <div>Arroz</div>
+        </div>
         
         <script type="text/javascript">
         var app = angular.module('meuApp', []);
         app.controller('meuCtrl', function($scope){
         	
-        	$scope.contador = 0;
-        	$scope.adicionar = function(){
-        		$scope.contador = $scope.contador +1;
+        	$scope.mostrar = false;
+        	
+        	$scope.mostrarDiv = function(){
+        		$scope.mostrar = true;
         	}
+        	
+        	$scope.esconderDiv = function(){
+                $scope.mostrar = false;
+            }
+        	
         });
         //Eventos: clique, teclado, soltar, copiar, colar, etc
         </script>
