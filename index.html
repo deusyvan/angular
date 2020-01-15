@@ -6,14 +6,18 @@
         <h2>Receita do Bolo</h2>
         <ul>
             <li ng-repeat="ing in ingredientes">
-                {{ing}}
+                {{ing.qt}} de {{ing.nome}}
             </li>
         </ul>
         
         <script type="text/javascript">
         var app = angular.module('meuApp', []);
         app.controller('meuCtrl', function($scope){
-            $scope.ingredientes = ["farinha", "ovo", "chocolate"];
+            $scope.ingredientes = [
+                {'nome':'Farinha', 'qt': '200g'},
+                {'nome' : 'Ovo', 'qt':'3 un'},
+                {'nome': 'Chocolate', 'qt': '500g'}
+             ];
         });
         </script>
     </body>
