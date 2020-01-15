@@ -6,7 +6,7 @@
         <h2>Receita do Bolo</h2>
         <ul>
             <li ng-repeat="ing in ingredientes">
-                {{ing.qt}} de {{ing.nome}}
+                {{ing.qt}} de {{ing.nome | uppercase}}
             </li>
         </ul>
         
