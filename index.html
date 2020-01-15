@@ -3,13 +3,15 @@
         <script type="text/javascript" src="angularjs/angular.min.js"></script>
     </head>
     <body ng-app ="meuApp" ng-controller="meuCtrl">
-        <input type="text" ng-model="meunome"/><br>
-        {{meunome}}
+        <input type="text" ng-model="primeiroNome"/><br>
+        <input type="text" ng-model="segundoNome"/><br>
+        {{primeiroNome+" "+segundoNome}}
         
         <script type="text/javascript">
         var app = angular.module('meuApp', []);
         app.controller('meuCtrl', function($scope){
-            $scope.meunome = "Testador"
+            $scope.primeiroNome = "Deusyvan";
+            $scope.segundoNome = "Silva";
         });
         </script>
     </body>
