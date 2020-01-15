@@ -4,22 +4,19 @@
     </head>
     <body ng-app ="meuApp" ng-controller="meuCtrl">
         
-        <input type="text" ng-focus="focou()" ng-blur="desfocou()"/>
-        
-        <p>{{texto}}</p>
+        <form name="meuForm">
+            <input type="email" name="email" ng-model="meuEmail" required/>
+            <input type="submit" value="Enviar"/>
+            
+            <p>O e-mail eh valido?</p>
+            <p>{{ meuForm.email.$valid}}</p>
+        </form>
         
         <script type="text/javascript">
         var app = angular.module('meuApp', []);
         app.controller('meuCtrl', function($scope){
         	
-            $scope.texto = "Nao ta focado!";
-            $scope.focou = function(){
-            	$scope.texto = "Ta focado!";
-            }
             
-            $scope.desfocou = function(){
-                $scope.texto = "Nao ta focado!";
-            }
         	
         });
         //Eventos: clique, teclado, soltar, copiar, colar, focus, etc
