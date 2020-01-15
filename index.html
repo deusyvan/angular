@@ -4,7 +4,11 @@
     </head>
     <body ng-app ="meuApp" ng-controller="meuCtrl">
         <h2>Lista de nomes</h2>
-        
+        <select ng-model="ordenarPor">
+            <option value="nome">Nome</option>
+            <option value="pais">País</option>
+            
+        </select>
         <table border="0" width="500">
             <tr>
                 <th align="left">Nome</th>
