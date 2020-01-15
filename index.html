@@ -3,33 +3,18 @@
         <script type="text/javascript" src="angularjs/angular.min.js"></script>
     </head>
     <body ng-app ="meuApp" ng-controller="meuCtrl">
-        <input type="text" ng-model="primeiroNome"/><br>
-        <input type="text" ng-model="segundoNome"/><br>
-        {{primeiroNome+" "+segundoNome}}
+        <h2>Receita do Bolo</h2>
+        <ul>
+            <li ng-repeat="ing in ingredientes">
+                {{ing}}
+            </li>
+        </ul>
         
         <script type="text/javascript">
         var app = angular.module('meuApp', []);
         app.controller('meuCtrl', function($scope){
-            $scope.primeiroNome = "Deusyvan";
-            $scope.segundoNome = "Silva";
+            $scope.ingredientes = ["farinha", "ovo", "chocolate"];
         });
         </script>
     </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
