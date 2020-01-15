@@ -5,8 +5,8 @@
     <body ng-app ="meuApp" ng-controller="meuCtrl">
         <h2>Receita do Bolo</h2>
         <ul>
-            <li ng-repeat="ing in ingredientes">
-                {{ing.qt}} de {{ing.nome | lowercase}}
+            <li ng-repeat="ing in ingredientes | filter:'o'">
+                {{ing.qt}} de {{ing.nome}}
             </li>
         </ul>
         
