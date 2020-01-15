@@ -3,13 +3,10 @@
         <script type="text/javascript" src="angularjs/angular.min.js"></script>
     </head>
     <body>
-        <div ng-app ="meuApp" >
-             
+        <div ng-app ="" >
+            <input type="text" ng-model="nome"/> <p ng-bind="nome"></p>
+	        {{ nome }} 
         </div>
-        <script type="text/javascript">
-        var app = angular.module("meuApp",[]);
-        
-        </script>
     </body>
 </html>
 
