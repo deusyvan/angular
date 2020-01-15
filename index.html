@@ -3,21 +3,14 @@
         <script type="text/javascript" src="angular.min.js"></script>
     </head>
     <body ng-app ="meuApp" ng-controller="meuCtrl">
-        <h2>Lista de nomes</h2>
-        <ul>
-            <li ng-repeat="x in nomes">{{x.nome}} tem {{x.idade}} anos</li>
-        </ul>
+        <h2>Restaurante X</h2>
+        <p>Esta eh a frase 1</p>
+        <p ng-show="false">Esta eh a frase 2</p>
         
         <script type="text/javascript">
         var app = angular.module('meuApp', []);
-        app.controller('meuCtrl', function($scope, $http){
-        	//Inicia zerado
-        	$scope.nomes = [];
+        app.controller('meuCtrl', function($scope){
         	
-        	//Pegar as informações do webservice
-        	$http.get('http://phpdozeroaoprofissional.com.br/testeangularjs.php').then(function(response){
-        		$scope.nomes = response.data.resultado;
-        	});
         	
         });
         // http://phpdozeroaoprofissional.com.br/testeangularjs.php retorna um json
