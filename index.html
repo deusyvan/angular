@@ -4,37 +4,14 @@
     </head>
     <body ng-app ="meuApp" ng-controller="meuCtrl">
         <h2>Lista de nomes</h2>
-        <select ng-model="ordenarPor" ng-options="x.nome for x in opcoes">
-        </select>
-        <table border="0" width="500">
-            <tr>
-                <th align="left" ng-repeat="op in opcoes">{{op.nome | uppercase}}</th>
-            </tr>
-            <tr ng-repeat="x in nomes | orderBy:ordenarPor.valor">
-                <td>{{x.nome}}</td>
-                <td>{{x.pais}}</td>
-            </tr>
-        </table>
-        
+        <div>{{html}}</div>
         
         <script type="text/javascript">
         var app = angular.module('meuApp', []);
-        app.controller('meuCtrl', function($scope){
+        app.controller('meuCtrl', function($scope, $http){
         	
-        	$scope.opcoes = [
-        		{nome: "Nome do sujeito", valor:"nome"},
-        		{nome: "País de Origem", valor:"pais"},
-        		];
+        	$scope.html = 'nada';
         	
-            $scope.nomes = [
-            	{nome:'Boniek', pais:'Brasil'},
-            	{nome:'Fulano', pais:'Japão'},
-            	{nome:'Cicrano', pais:'China'},
-            	{nome:'Beltrano', pais:'França'},
-            	{nome:'Augusto', pais:'Estados Unidos'},
-            	{nome:'Felipe', pais:'Candá'},
-            	{nome:'José', pais:'Rússia'}
-            	]
         });
         </script>
     </body>
