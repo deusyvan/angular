@@ -4,7 +4,7 @@
     </head>
     <body ng-app ="meuApp" ng-controller="meuCtrl">
         <h2>Receita do Bolo</h2>
-        
+        <input type="text" ng-model="filtrarPor" />
         <ul>
             <li ng-repeat="ing in ingredientes | filter:filtrarPor">
                 {{ing.qt}} de {{ing.nome}}
