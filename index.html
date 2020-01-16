@@ -4,22 +4,22 @@
     </head>
     <body ng-app ="meuApp" ng-controller="meuCtrl">
         
-        <form name="meuForm">
-            <input type="email" name="email" ng-model="meuEmail" required/>
-            <span ng-show="meuForm.email.$dirty && meuForm.email.$invalid">(!)</span>
-            <br/><br/>
-            <input type="submit" value="Enviar"/>
-        </form>
+        
+        <input type="text" ng-model="texto" ng-change="rodar()" />
+        
+        <p>{{ texto }}</p>
+        <p>{{ texto2 }}</p>
         
         <script type="text/javascript">
         var app = angular.module('meuApp', []);
         app.controller('meuCtrl', function($scope){
-        	
-            
-        	
-        });
         
-        //w3schools.com/angular/angular_validation.asp
+        	$scope.texto2 = "";
+        	$scope.rodar = function(){
+		        $scope.texto2 = angular.lowercase($scope.texto);
+        	}
+        
+        });
         </script>
     </body>
 </html>
