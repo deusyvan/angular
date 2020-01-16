@@ -5,21 +5,19 @@
     <body ng-app ="meuApp" ng-controller="meuCtrl">
         
         
-        <input type="text" ng-model="texto" ng-change="rodar()" />
-        
         <p>{{ texto }}</p>
         <p>{{ texto2 }}</p>
         
         <script type="text/javascript">
         var app = angular.module('meuApp', []);
         app.controller('meuCtrl', function($scope){
-        
+        	$scope.texto = 12;
         	$scope.texto2 = "";
-        	$scope.rodar = function(){
-        		if(angular.isString($scope.texto)){
-			        $scope.texto2 = "Sim eh uma string";
-        		}
-        	}
+       		if(angular.isString($scope.texto)){
+		        $scope.texto2 = "Sim eh uma string";
+       		} else {
+       			$scope.texto2 = "Nao eh uma string";
+       		}
         
         });
         </script>
