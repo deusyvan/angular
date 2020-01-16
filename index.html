@@ -4,20 +4,13 @@
     </head>
     <body ng-app ="meuApp" ng-controller="meuCtrl">
         
-        
-        <p>{{ texto }}</p>
-        <p>{{ texto2 }}</p>
+        <div ng-include="'topo.html'"></div>
+        <div ng-include="'pagina1.html'"></div>
         
         <script type="text/javascript">
         var app = angular.module('meuApp', []);
         app.controller('meuCtrl', function($scope){
-        	$scope.texto = '00';
-        	$scope.texto2 = "";
-       		if(angular.isNumber($scope.texto)){
-		        $scope.texto2 = "Sim eh um numero";
-       		} else {
-       			$scope.texto2 = "Nao eh um numero";
-       		}
+        	$scope.nomes = ["Boniek", "Fulano", "Cicrano"];
         
         });
         </script>
