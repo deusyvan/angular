@@ -11,12 +11,12 @@
         <script type="text/javascript">
         var app = angular.module('meuApp', []);
         app.controller('meuCtrl', function($scope){
-        	$scope.texto = 12;
+        	$scope.texto = '00';
         	$scope.texto2 = "";
-       		if(angular.isString($scope.texto)){
-		        $scope.texto2 = "Sim eh uma string";
+       		if(angular.isNumber($scope.texto)){
+		        $scope.texto2 = "Sim eh um numero";
        		} else {
-       			$scope.texto2 = "Nao eh uma string";
+       			$scope.texto2 = "Nao eh um numero";
        		}
         
         });
