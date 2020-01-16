@@ -9,7 +9,7 @@
        <button ng-click="addItem()">+</button><br/>
        <span>{{aviso}}</span>
        <ul>
-        <li ng-repeat="p in lista">
+        <li ng-repeat="p in lista | orderBy:p">
             {{p}} <button>-</button>
         </li>
        </ul>
