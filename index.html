@@ -9,8 +9,8 @@
        <button ng-click="addItem()">+</button><br/>
        <span>{{aviso}}</span>
        <ul>
-        <li ng-repeat="p in lista | orderBy:p">
-            {{p}} <button>-</button>
+        <li ng-repeat="p in lista">
+            {{p}} <button ng-click="removeItem($index)">-</button>
         </li>
        </ul>
         
@@ -30,6 +30,11 @@
             	}
             	
             	$scope.addTexto = '';
+            }
+            
+            $scope.removeItem = function(x){
+            	$scope.aviso = "";
+            	$scope.lista.splice(x,1);//Começando do x remova um item e encerra
             }
         
         });
