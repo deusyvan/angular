@@ -16,7 +16,9 @@
         
         	$scope.texto2 = "";
         	$scope.rodar = function(){
-		        $scope.texto2 = angular.lowercase($scope.texto);
+        		if(angular.isString($scope.texto)){
+			        $scope.texto2 = "Sim eh uma string";
+        		}
         	}
         
         });
