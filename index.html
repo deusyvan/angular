@@ -6,7 +6,8 @@
         
        <h2>Lista de Compras</h2>
        <input type="text" ng-model="addTexto" />
-       <button ng-click="addItem()">+</button>
+       <button ng-click="addItem()">+</button><br/>
+       <span>{{aviso}}</span>
        <ul>
         <li ng-repeat="p in lista">
             {{p}} <button>-</button>
@@ -16,11 +17,16 @@
         <script type="text/javascript">
         var app = angular.module('meuApp', []);
         app.controller('meuCtrl', function($scope){
+        	$scope.aviso = '';
             $scope.lista = ["Leite", "Pao"];
             $scope.addItem = function(){
+            	$scope.aviso = '';
             	if($scope.addTexto != ''){
-            		
-	            	$scope.lista.push($scope.addTexto);
+            		if($scope.lista.indexOf($scope.addTexto) == -1){
+		            	$scope.lista.push($scope.addTexto);
+            		} else {
+            			$scope.aviso = "Item jah adicinado!";
+            		}
             	}
             	
             	$scope.addTexto = '';
